@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Company Website</h1>
+<p>The date and time today is {% now 'DATETIME_FORMAT' %}</p>
+<p>There are {{ inventory_list|length }} items in the list today</p>
+<ul>
+    {% for item in inventory_list %}
+    <li>{{ item|capfirst }}</li>
+    {% endfor %}
+</ul>
+{% endblock%}
